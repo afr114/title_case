@@ -1,5 +1,5 @@
 class String
   define_method(:title_case) do
-    # eventually put code here
+    self.capitalize!()
   end
 end
