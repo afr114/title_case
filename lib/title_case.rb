@@ -1,16 +1,16 @@
 class String
   define_method(:title_case) do
-    combiningConjunctions_array = ['and', 'or', 'for', 'nor', 'but', 'yet', 'so']
-    split_sentence_array = self.split
-    split_sentence_array.each do |word|
-
-
-      if (combiningConjunctions_array).include?(word).!()
-        word.capitalize!()
+    titlecased_words = []
+    special_words = ["to", "the", "of", "from", "and", "but", "or", "by", "on"]
+    words = self.split()
+    words.each do |word|
+      if (word != words.at(0)) && (special_words.include?(word))
+        titlecased_words.push(word)
+      else
+        titlecased_words.push(word.capitalize)
       end
-
     end
-    split_sentence_array.join(" ")
+    titlecased_words.join(" ")
   end
 end
 
